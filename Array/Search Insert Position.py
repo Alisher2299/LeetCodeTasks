@@ -4,6 +4,7 @@ return the index where it would be if it were inserted in order.
 
 You must write an algorithm with O(log n) runtime complexity.
 """
+from typing import List
 
 
 def searchInsert(self, nums: List[int], target: int) -> int:

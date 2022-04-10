@@ -9,6 +9,13 @@ element appears only once. Return the linked list sorted as well.
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+from typing import Optional
+
+
+class ListNode:
+    pass
+
+
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         cur = head
