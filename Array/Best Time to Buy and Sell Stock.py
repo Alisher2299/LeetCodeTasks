@@ -27,7 +27,7 @@ def maxProfit(prices: List[int]) -> int:
     if len(prices) == 0:
         return 0
 
-    m = prices[len(prices) - 1]
+    m = prices[-1]
     prof = 0
 
     for i in prices[::-1]:
