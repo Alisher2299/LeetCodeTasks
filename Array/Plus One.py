@@ -9,9 +9,9 @@ from typing import List
 
 
 def plusOne(d: List[int]) -> List[int]:
-    return [i for i in str((int(''.join(map(str, d))) + 1))]
+    return [i for i in str(int(''.join(map(str, d))) + 1)]
 
 
-digits = [1, 2, 3]
+digits = [9]
 
 print(plusOne(digits))

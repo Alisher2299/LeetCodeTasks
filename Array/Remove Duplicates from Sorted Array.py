@@ -34,6 +34,7 @@ def removeDuplicates(nums: List[int]) -> int:
     p = 0
     q = 1
     while q < len(nums):
+        print(nums[p])
         if nums[q] != nums[p]:
             nums[p + 1] = nums[q]
             p += 1
@@ -41,6 +42,6 @@ def removeDuplicates(nums: List[int]) -> int:
     return p + 1
 
 
-nums = [1, 1, 2]
+nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 
 print(removeDuplicates(nums))

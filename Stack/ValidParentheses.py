@@ -5,21 +5,34 @@ An input string is valid if:
 
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
+
+
+Example 1:
+
+Input: s = "()"
+Output: true
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+Example 3:
+
+Input: s = "(]"
+Output: false
 """
 
 
-class Solution:
-    def isValid(self, s: str) -> bool:
-        leftSymbols = []
-        for c in s:
-            if c in ['(', '{', '[']:
-                leftSymbols.append(c)
-            elif c == ')' and len(leftSymbols) != 0 and leftSymbols[-1] == '(':
-                leftSymbols.pop()
-            elif c == '}' and len(leftSymbols) != 0 and leftSymbols[-1] == '{':
-                leftSymbols.pop()
-            elif c == ']' and len(leftSymbols) != 0 and leftSymbols[-1] == '[':
-                leftSymbols.pop()
-            else:
-                return False
-        return leftSymbols == []
+def isValid(s: str) -> bool:
+    char_dict = {'(': ')', '[': ']', '{': '}'}
+    stack = []
+
+    for i in s:
+        if i in char_dict:
+            stack.append(i)
+        elif len(stack) == 0 or char_dict[stack.pop()] != i:
+            return False
+    return len(stack) == 0
+
+
+s = '()'
+print(isValid(s))
