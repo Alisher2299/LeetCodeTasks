@@ -22,7 +22,7 @@ def max_profit(daily_price):
     return get_bet_profit(last_day, on_stock)
 
 
-arr = [7, 6, 4, 3, 1]
+arr = [7, 6, 1, 3, 1]
 
 print('s1>', max_profit(arr))
 
@@ -46,3 +46,19 @@ def max_prof(daily_price):
 
 
 print('s2>', max_prof(arr))
+
+
+def max_prof3(prices):
+    max_pr = 0
+    cur_min = prices[0]
+
+    for i in range(len(prices)):
+        price = prices[i]
+
+        max_pr = max(max_pr, price - cur_min)
+        cur_min = min(cur_min, price)
+
+    return max_pr
+
+
+print('s3>', max_prof3(arr))
